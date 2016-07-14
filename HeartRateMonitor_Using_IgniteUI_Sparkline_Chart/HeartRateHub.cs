@@ -6,10 +6,10 @@ using Newtonsoft.Json;
 namespace HeartRateMonitor_Using_IgniteUI_Sparkline_Chart
 {
 
-    public class HeartRate_Hub : Hub
+    public class HeartRateHub : Hub
     {
-        static Timer _timer;       
-        private Random _rnd = new Random();
+        private static Timer _timer;       
+        private readonly Random _rnd = new Random();
         public void PulseSimulator()
         {
             if (_timer == null)
