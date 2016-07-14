@@ -5,10 +5,9 @@ using Newtonsoft.Json;
 
 namespace HeartRateMonitor_Using_IgniteUI_Sparkline_Chart
 {
-
     public class HeartRateHub : Hub
     {
-        private static Timer _timer;       
+        private static Timer _timer;
 
         private readonly Random _rnd = new Random();
 
@@ -24,12 +23,9 @@ namespace HeartRateMonitor_Using_IgniteUI_Sparkline_Chart
 
         public void GeneratePulse(object state)
         {
-            var pulseRate = new { pulseRate =  _rnd.Next(60, 100) };
+            var pulseRate = new {pulseRate = _rnd.Next(60, 100)};
 
             Clients.All.updatePulse(JsonConvert.SerializeObject(pulseRate));
         }
-
     }
-
-
 }
